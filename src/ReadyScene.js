@@ -11,23 +11,22 @@ var ReadyScene = ns.ReadyScene = Hilo.Class.create({
     init: function(properties){
         //准备Get Ready!
         var getready = new Hilo.Bitmap({
-            image: properties.image,
-            rect: [0, 0, 508, 158]
+            image: properties.image
         });
 
-        //开始提示tap
-        var tap = new Hilo.Bitmap({
-            image: properties.image,
-            rect: [0, 158, 286, 246]
-        });
+        var close = new Hilo.Bitmap({
+            image:properties.close
+        })
+
         
-        //确定getready和tap的位置
-        tap.x = this.width - tap.width >> 1;
-        tap.y = this.height - tap.height + 40 >> 1;
-        getready.x = this.width - getready.width >> 1;
-        getready.y = tap.y - getready.height >> 0;
+        //确定getready的位置
+        getready.x = 0
+        getready.y = 0
+        close.x = 5
+        close.y = 5
 
-        this.addChild(tap, getready);
+
+        this.addChild(getready,close);
     }
 });
 

@@ -40,7 +40,6 @@
         var step = new Hilo.Bitmap({
           id:'step'+i,
           image:image,
-          rect:[0,0,60,91],
           startY:0
           // boundsArea:[
           //   {x:8,y:0},
@@ -67,9 +66,21 @@
       var stepMaxX = step.width;
       var stepMaxY = 30;
 
+      var newwidth = this.width
+      var newheight = document.documentElement.clientHeight
+      var DPR = window.devicePixelRatio
+
+      console.log(newwidth)
+
+      var gap_Y = newheight/DPR
+      // console.log(gap_Y)
       //在downMinY和downMaxY之间随机位置
-      step.x = 30+ 850 * Math.random() >> 0;
-      step.y = - 0.8*this.stepHeight*index + 680;
+      if(index%2==0){
+        step.x = newwidth/2* Math.random();
+      }else{
+        step.x =newwidth-newwidth/2* Math.random()+200;
+      }
+      step.y = - 1.3*gap_Y*index + this.startY;
   },
   checkCollision: function(bird){
 
@@ -101,9 +112,16 @@
     Hilo.Tween._tweens.push(this.moveTween)
   }, 
   reset: function(){
+    var newwidth = document.documentElement.clientWidth
+    var newheight = document.documentElement.clientHeight
+    var DPR = window.devicePixelRatio
     for(var i = 0;i < this.numSteps;i++){
       var step = this.getChildAt(i)
-      step.y = step.saveY
+      if(i%2==0){
+        step.x = newwidth/2* Math.random();
+      }else{
+        step.x =newwidth-newwidth/2* Math.random()+200;
+      }
       step.startY = step.saveY
     }
   }
