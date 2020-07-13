@@ -311,7 +311,13 @@
             }else{
                 this.isUp = false;
             }
-            
+            Hilo.Tween.to(this.bg, {
+                y: -bgOffset * this.bg.scaleY*2.8*this.count/99
+            })
+            // {
+            //     duration: 1116,
+            //     loop: true
+            // });
 
             var newheight = document.documentElement.clientHeight
             var DPR = window.devicePixelRatio

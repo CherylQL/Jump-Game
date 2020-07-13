@@ -32,7 +32,7 @@ var Asset = ns.Asset = Hilo.Class.create({
 
     load: function(){
         var resources = [
-            {id:'bg', src:'images/bg.png'},
+            {id:'bg', src:'images/bg2.png'},
             {id:'ground', src:'images/ground.png'},
             {id:'ready', src:'images/ready.png'},
             {id:'over', src:'images/over.png'},
