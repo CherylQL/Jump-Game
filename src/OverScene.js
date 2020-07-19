@@ -75,7 +75,7 @@ var OverScene = ns.OverScene = Hilo.Class.create({
         // gameover.x = this.width - gameover.width >> 1;
         // gameover.y = board.y - gameover.height - 20;
         startBtn.x = this.width/2-startBtn.width/2;
-        startBtn.y = board.y + board.height + 20 >> 0;
+        startBtn.y = board.y + board.height + 160>> 0;
         continueBtn.x = startBtn.x;
         continueBtn.y = startBtn.y+180;
         gradeBtn.x = startBtn.x;
@@ -102,7 +102,7 @@ var OverScene = ns.OverScene = Hilo.Class.create({
         Hilo.Tween.to(this.getChildById('score'), {alpha:1, y:this.getChildById('score').y-150}, {duration:200, delay:200});
         Hilo.Tween.to(this.getChildById('best'), {alpha:0, y:this.getChildById('best').y-150}, {duration:200, delay:200});
         Hilo.Tween.to(this.getChildById('start'), {alpha:1}, {duration:100, delay:600});
-        Hilo.Tween.to(this.getChildById('continue'), {alpha:1}, {duration:100, delay:600});
+        Hilo.Tween.to(this.getChildById('continue'), {alpha:0}, {duration:100, delay:600});
         Hilo.Tween.to(this.getChildById('grade'), {alpha:0}, {duration:100, delay:600});
         Hilo.Tween.to(this.getChildById('mask'), {alpha:0}, {duration:400});
     },
